@@ -9,11 +9,11 @@ public class Animal {
     public int last_year_number = age %10;
 
     public String yearEnd(){
-        if ((age >=10) && (age <=20)) {
+        if ((age == 1) || (age >=10) && (age <=20)) {
             System.out.println("лет");
-        } else if ((last_year_number >=2) & (last_year_number <=4)) {
+        } else if ((last_year_number >=2) && (last_year_number <=4)) {
             System.out.println("года");
-        } else if ((last_year_number >=5) & (last_year_number <=9)) {
+        } else if ((last_year_number >=5) && (last_year_number <=9)) {
             System.out.println("лет");
         }
         throw new NullPointerException("Некорректно задан возраст.");

@@ -13,7 +13,6 @@ public class mainApp {
 
         ArrayList<Animal> animals = new ArrayList<>();
         Scanner scan_for_userInput = new Scanner(System.in);
-        String userChoice = scan_for_userInput.next().toUpperCase().trim();
         CommandsAnimalMenu commands = CommandsAnimalMenu.ADD;
 
         while (true){
@@ -21,31 +20,50 @@ public class mainApp {
             switch (commands) {
                 case ADD -> {
                     System.out.println("Какое животное добавить: cat, dog, duck?");
-                    String animalChoice = scan_for_userInput.next();
-//                    animalChoice();
-//                    System.out.println("Какое у него будет имя?");
-//                    nameChoice();
-//                    System.out.println("Какого возраста?");
-//                    ageChoice();
-//                    System.out.println("Какого цвета?");
-//                    colourChoice();
-
-
+                    String animalChoice = scan_for_userInput.next().trim().toLowerCase();
+                    if (animalChoice.equals("cat")) {
+                        Animal cat = new Cat();
+                        animals.add(cat);
+                        animalSelect(cat, scan_for_userInput);
+                        cat.Say();
+                    } else if (animalChoice.equals("dog")) {
+                        Animal dog = new Dog();
+                        animals.add(dog);
+                        animalSelect(dog, scan_for_userInput);
+                        dog.Say();
+                    } else if (animalChoice.equals("duck")) {
+                        Animal duck = new Duck();
+                        animals.add(duck);
+                        animalSelect(duck, scan_for_userInput);
+                        duck.Say();
+                    }
+                    break;
                 }
 
-                case LIST -> {}
+                case LIST -> {
+                    System.out.println("Вывод списка всех добавленных животных");
+                    animals.toString();
+                    break;
+                }
                 case EXIT -> {
-
+                    System.out.println("Выход");
+                    System.exit(1);
                 }
+                default -> System.out.println("Неизвестная команда");
 
             }
 
         }
     }
 
-    public Animal animalSelect (Animal animal, Scanner scanner) {
+    public static void animalSelect (Animal animal, Scanner scanner) {
         System.out.println("Как его будут звать?");
         animal.setName(scanner.next());
-        System.out.println("СЧ");
+        System.out.println("Сколько ему лет?");
+        animal.setAge(scanner.nextInt());
+        System.out.println("Сколько оно весит?");
+        animal.setWeight(scanner.nextInt());
+        System.out.println("Какого оно цвета?");
+        animal.setColor(scanner.next());
     }
 }

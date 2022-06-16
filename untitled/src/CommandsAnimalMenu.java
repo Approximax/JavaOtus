@@ -2,7 +2,6 @@ public enum CommandsAnimalMenu {
     ADD,
     LIST,
     EXIT
-
 //    @Override
 //    public String toString() {
 //        return switch (this) {

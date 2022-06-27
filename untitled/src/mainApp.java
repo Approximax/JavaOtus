@@ -13,15 +13,18 @@ public class mainApp {
 
         ArrayList<Animal> animals = new ArrayList<>();
         Scanner scan_for_userInput = new Scanner(System.in);
-        String animalChoice = scan_for_userInput.next().trim().toLowerCase();
-        CommandsAnimalMenu commands = CommandsAnimalMenu.valueOf(animalChoice);
+
+
 
         while (true){
             System.out.println("Привет! Вот список команд:" + Arrays.toString(CommandsAnimalMenu.values()));
+            String commandChoice = scan_for_userInput.next().trim().toUpperCase();
+            CommandsAnimalMenu commands = CommandsAnimalMenu.valueOf(commandChoice);
+
             switch (commands) {
                 case ADD :
                     System.out.println("Какое животное добавить: cat, dog, duck?");
-
+                    String animalChoice = scan_for_userInput.next().trim().toLowerCase();
                     if (animalChoice.equals("cat")) {
                         Animal cat = new Cat();
                         animals.add(cat);
@@ -38,15 +41,16 @@ public class mainApp {
                         animalSelect(duck, scan_for_userInput);
                         duck.Say();
                     }
-                    break;
+                break;
+
                 case LIST :
                     System.out.println("Вывод списка всех добавленных животных");
-                    animals.toString();
-                    break;
+                    animals.forEach(animal -> animal.toString());
+                break;
                 case EXIT :
                     System.out.println("Выход");
                     System.exit(1);
-                    break;
+
                 default : System.out.println("Неизвестная команда");
             }
 

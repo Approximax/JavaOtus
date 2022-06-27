@@ -6,7 +6,8 @@ public abstract class Animal {
     public String color;
 
 //    Как мне кажется тут получается некий "велосипед" по выборке лет/год/года, но пока что как лучше это сделать я ещё не придумал
-    public int last_year_number = age %10;
+
+    public int last_year_number = getAge() % 10;
 
     public String yearEnd(){
         if ((age == 1) || (age >=10) && (age <=20)) {
@@ -15,8 +16,10 @@ public abstract class Animal {
             System.out.println("года");
         } else if ((last_year_number >=5) && (last_year_number <=9)) {
             System.out.println("лет");
+        } else  {
+            throw new NullPointerException("Некорректно задан возраст.");
         }
-        throw new NullPointerException("Некорректно задан возраст.");
+        return null;
     }
 
     public void Say() {

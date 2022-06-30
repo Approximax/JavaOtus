@@ -45,7 +45,7 @@ public class mainApp {
 
                 case LIST :
                     System.out.println("Вывод списка всех добавленных животных");
-                    animals.forEach(animal -> animal.toString());
+//                    animals.forEach.toString();
                 break;
                 case EXIT :
                     System.out.println("Выход");

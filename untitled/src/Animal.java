@@ -72,6 +72,6 @@ public abstract class Animal {
 
     @Override
     public String toString() {
-        return "Привет! меня зовут" + name + ", мне" + age + yearEnd() + ", я вешу -" + weight + "кг, мой цвет - " + color;
+        return "Привет! меня зовут " + name + ", мне " + age + " " + yearEnd() + ", я вешу - " + weight + "кг, мой цвет - " + color;
     }
 }

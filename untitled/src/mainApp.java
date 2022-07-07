@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.function.Consumer;
 
 public class mainApp {
 
@@ -45,7 +46,12 @@ public class mainApp {
 
                 case LIST :
                     System.out.println("Вывод списка всех добавленных животных");
-//                    animals.forEach.toString();
+                    animals.forEach(new Consumer<Animal>() {
+                        @Override
+                        public void accept(Animal animal) {
+                            System.out.println(animal);
+                        }
+                    });
                 break;
                 case EXIT :
                     System.out.println("Выход");

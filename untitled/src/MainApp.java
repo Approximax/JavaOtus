@@ -3,12 +3,12 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.function.Consumer;
 
-public class mainApp {
+public class MainApp {
 
-    @Override
-    public String toString() {
-        return CommandsAnimalMenu.ADD + ", " + CommandsAnimalMenu.LIST + ", " + CommandsAnimalMenu.EXIT;
-    }
+//    @Override
+//    public String toString() {
+//        return CommandsAnimalMenu.ADD + ", " + CommandsAnimalMenu.LIST + ", " + CommandsAnimalMenu.EXIT;
+//    }
 
     public static void main(String[] args) {
 
@@ -28,19 +28,19 @@ public class mainApp {
                     String animalChoice = scan_for_userInput.next().trim().toLowerCase();
                     if (animalChoice.equals("cat")) {
                         Animal cat = new Cat();
+                        cat.say();
                         animals.add(cat);
                         animalSelect(cat, scan_for_userInput);
-                        cat.Say();
                     } else if (animalChoice.equals("dog")) {
                         Animal dog = new Dog();
+                        dog.say();
                         animals.add(dog);
                         animalSelect(dog, scan_for_userInput);
-                        dog.Say();
                     } else if (animalChoice.equals("duck")) {
                         Animal duck = new Duck();
+                        duck.say();
                         animals.add(duck);
                         animalSelect(duck, scan_for_userInput);
-                        duck.Say();
                     }
                 break;
 

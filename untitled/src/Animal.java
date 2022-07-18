@@ -11,7 +11,7 @@ public abstract class Animal {
         return getAge() % 10;
     }
 
-    public String yearEnd(){
+    public String yearEnding(){
         if ((age == 1) || (age >=10) && (age <=20)) {
             return ("лет");
         } else if ((getLastYearNumber() >=2) && (getLastYearNumber() <=4)) {
@@ -19,22 +19,22 @@ public abstract class Animal {
         } else if ((getLastYearNumber() >=5) && (getLastYearNumber() <=9)) {
             return ("лет");
         } else  {
-            throw new NullPointerException("Некорректно задан возраст.");
+            throw new IllegalArgumentException("Некорректно задан возраст.");
         }
     }
 
-    public void Say() {
+    public void say() {
         System.out.println("Я говорю");
     }
-    public void Go() {
+    public void go() {
         System.out.println("Я иду");
     }
 
-    public void Drink() {
+    public void drink() {
         System.out.println("Я пью");
     }
 
-    public void Eat() {
+    public void eat() {
         System.out.println("Я ем");
     }
 
@@ -72,6 +72,6 @@ public abstract class Animal {
 
     @Override
     public String toString() {
-        return "Привет! меня зовут " + name + ", мне " + age + " " + yearEnd() + ", я вешу - " + weight + "кг, мой цвет - " + color;
+        return "Привет! меня зовут " + name + ", мне " + age + " " + yearEnding() + ", я вешу - " + weight + "кг, мой цвет - " + color;
     }
 }
